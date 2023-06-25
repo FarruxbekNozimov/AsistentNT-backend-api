@@ -12,6 +12,7 @@ import { RoomsModule } from './rooms/rooms.module';
 import { StudentsModule } from './students/students.module';
 import { TasksModule } from './tasks/tasks.module';
 import { TelegramsModule } from './telegrams/telegrams.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { TelegramsModule } from './telegrams/telegrams.module';
     }),
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     MongooseModule.forRoot(process.env.MONGO_URI),
+    AuthModule,
     AdminsModule,
     AssistantsModule,
     DirectionsModule,
