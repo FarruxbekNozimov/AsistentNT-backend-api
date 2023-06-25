@@ -14,7 +14,7 @@ export class UpdateGroupsDto {
 	assistant_id?: number;
 
 	@ApiProperty({ example: "Dushanba,Chorshanba,Juma" })
-	day?: varchar;
+	day?: string;
 
 	@ApiProperty({ example: "14:00" })
 	time?: string;

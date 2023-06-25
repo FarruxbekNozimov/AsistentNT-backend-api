@@ -211,7 +211,7 @@ makeFiles('groups', 'Groups', {
     "{ type: mongoose.Schema.Types.ObjectId, ref:'Assistants'  }]",
     '',
   ],
-  day: ['varchar', '', 'Dushanba,Chorshanba,Juma'],
+  day: ['string', '', 'Dushanba,Chorshanba,Juma'],
   time: ['string', '', '14:00'],
   start_date: ['string', '', 'Sunday, June 25, 2023'],
   photo: [

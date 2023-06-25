@@ -5,37 +5,35 @@ export type GroupsDocument = HydratedDocument<Groups>;
 
 @Schema({ timestamps: true })
 export class Groups {
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref:'Directions'  }])
-	direction_id:mongoose.Schema.Types.ObjectId;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Directions' })
+  direction_id: mongoose.Schema.Types.ObjectId;
 
-	@Prop()
-	group_number:string;
+  @Prop()
+  group_number: string;
 
-	@Prop()
-	teacher:string;
+  @Prop()
+  teacher: string;
 
-	@Prop({ type: mongoose.Schema.Types.ObjectId, ref:'Assistants'  }])
-	assistant_id:mongoose.Schema.Types.ObjectId;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Assistants' })
+  assistant_id: mongoose.Schema.Types.ObjectId;
 
-	@Prop()
-	day:varchar;
+  @Prop()
+  day: string;
 
-	@Prop()
-	time:string;
+  @Prop()
+  time: string;
 
-	@Prop()
-	start_date:string;
+  @Prop()
+  start_date: string;
 
-	@Prop()
-	photo:string;
+  @Prop()
+  photo: string;
 
-	@Prop({ type: mongoose.Schema.Types.ObjectId, ref:'Rooms'  }])
-	room_id:mongoose.Schema.Types.ObjectId;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Rooms' })
+  room_id: mongoose.Schema.Types.ObjectId;
 
-	@Prop()
-	is_active:boolean;
-
-	;
+  @Prop()
+  is_active: boolean;
 }
 
 export const GroupsSchema = SchemaFactory.createForClass(Groups);
