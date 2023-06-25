@@ -145,6 +145,13 @@ function makeFiles(folderName: string, name: string, props: object) {
   }
 }
 
+// ADMINS
+makeFiles('admins', 'Admins', {
+  username: ['string', '', '123'],
+  password: ['string', '', '123'],
+  token: ['string', '', ''],
+});
+
 // STUDENTS
 makeFiles('students', 'Students', {
   name: ['string', '', 'Toshmat'],
@@ -167,14 +174,15 @@ makeFiles('students', 'Students', {
   token: ['string', '', ''],
 });
 
-// ASSISTANT
-makeFiles('assistant', 'Assistant', {
+// ASSISTANTS
+makeFiles('assistants', 'Assistants', {
   name: ['string', '', 'Toshmat'],
   surname: ['string', '', 'Eshmatov'],
+  password: ['string', '', '887038006'],
   age: ['string', '', '16'],
   direction_id: [
     'mongoose.Schema.Types.ObjectId',
-    "{ type: mongoose.Schema.Types.ObjectId, ref:'Direction'  }]",
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Directions'  }]",
     '',
   ],
   phone: ['string', '', '887038006'],
@@ -189,25 +197,82 @@ makeFiles('assistant', 'Assistant', {
   token: ['string', '', ''],
 });
 
-
-// ASSISTANT
-makeFiles('assistant', 'Assistant', {
-  name: ['string', '', 'Toshmat'],
-  surname: ['string', '', 'Eshmatov'],
-  age: ['string', '', '16'],
+// GROUPS
+makeFiles('groups', 'Groups', {
   direction_id: [
     'mongoose.Schema.Types.ObjectId',
-    "{ type: mongoose.Schema.Types.ObjectId, ref:'Direction'  }]",
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Directions'  }]",
     '',
   ],
-  phone: ['string', '', '887038006'],
-  telegram_id: [
+  group_number: ['string', '', 'N7'],
+  teacher: ['string', '', 'Scott'],
+  assistant_id: [
     'mongoose.Schema.Types.ObjectId',
-    "{ type: mongoose.Schema.Types.ObjectId, ref:'Telegrams'  }]",
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Assistants'  }]",
     '',
   ],
-  photo: ['string', '', 'https://picsum.photos/1000/1000'],
-  gender: ['boolean', '', 'true'],
+  day: ['varchar', '', 'Dushanba,Chorshanba,Juma'],
+  time: ['string', '', '14:00'],
+  start_date: ['string', '', 'Sunday, June 25, 2023'],
+  photo: [
+    'string',
+    '',
+    'https://marketing.uz/uz/uploads/works/covers/c6c1569b46e710f6ffefdfb5d8f046d7.jpg',
+  ],
+  room_id: [
+    'mongoose.Schema.Types.ObjectId',
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Rooms'  }]",
+    '',
+  ],
   is_active: ['boolean', '', 'true'],
-  token: ['string', '', ''],
+});
+
+// ROOMS
+makeFiles('rooms', 'Rooms', {
+  name: ['string', '', 'Google'],
+  route: ['string', '', '2-qavat'],
+});
+
+// TASKS
+makeFiles('tasks', 'Tasks', {
+  title: ['string', '', 'Projectni tugatish'],
+  description: ['string', '', 'Projectni tugatishingiz kerak'],
+  start_time: ['string', '', '2023.06.25'],
+  deadline: ['string', '', '2023.07.02'],
+});
+
+// TELEGRAMS
+makeFiles('telegrams', 'Telegrams', {
+  title: ['string', '', 'Projectni tugatish'],
+  description: ['string', '', 'Projectni tugatishingiz kerak'],
+  start_time: ['string', '', '2023.06.25'],
+  deadline: ['string', '', '2023.07.02'],
+});
+
+// DIRECTIONS
+makeFiles('directions', 'Directions', {
+  name: ['string', '', 'Projectni tugatish'],
+  is_active: ['boolean', '', 'true'],
+});
+
+// RATINGS
+makeFiles('ratings', 'Ratings', {
+  mark: ['string', '', '80'],
+  assistant_id: [
+    'mongoose.Schema.Types.ObjectId',
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Assistants'  }]",
+    '',
+  ],
+  student_id: [
+    'mongoose.Schema.Types.ObjectId',
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Students'  }]",
+    '',
+  ],
+  task_id: [
+    'mongoose.Schema.Types.ObjectId',
+    "{ type: mongoose.Schema.Types.ObjectId, ref:'Tasks'  }]",
+    '',
+  ],
+  description: ['string', '', 'Bugun yaxshi tayyorlanibdi'],
+  date: ['string', '', '2023.01.04'],
 });
