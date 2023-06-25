@@ -26,6 +26,10 @@ export class AssistantsService {
     return this.assistantsModel.findById(id).exec();
   }
 
+  async findByLogin(login: string) {
+    return this.assistantsModel.findOne({ login }).exec();
+  }
+
   async update(id: string, updateAssistantsDto: UpdateAssistantsDto) {
     return this.assistantsModel
       .findByIdAndUpdate(id, updateAssistantsDto, { new: true })

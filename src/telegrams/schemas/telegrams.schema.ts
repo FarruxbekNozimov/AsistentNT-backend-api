@@ -6,18 +6,19 @@ export type TelegramsDocument = HydratedDocument<Telegrams>;
 @Schema({ timestamps: true })
 export class Telegrams {
   @Prop()
-	title:string;
+  title: string;
 
-	@Prop()
-	description:string;
+  @Prop()
+  description: string;
 
-	@Prop()
-	start_time:string;
+  @Prop()
+  start_time: string;
 
-	@Prop()
-	deadline:string;
+  @Prop()
+  deadline: string;
 
-	;
+  @Prop()
+  username: string;
 }
 
 export const TelegramsSchema = SchemaFactory.createForClass(Telegrams);
